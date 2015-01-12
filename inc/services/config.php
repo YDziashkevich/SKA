@@ -7,3 +7,4 @@ define('APP_DB_USER', 'root');
 define('APP_DB_PASS', '');
 define('APP_DB_PREFIX', 'st_');
 define('APP_BASE_URL', $_SERVER['SCRIPT_NAME']);
+define('APP_BASE_PATH', str_replace('index.php', '', $_SERVER['SCRIPT_NAME']));

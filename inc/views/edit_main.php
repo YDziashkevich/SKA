@@ -3,4 +3,4 @@
         <?php echo MainModel::getContent(); ?>
     </textarea>
     <input class="btn btn-success" type="submit" name="save_content" value="Сохранить">
-    </form>
+</form>

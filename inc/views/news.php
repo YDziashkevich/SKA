@@ -9,7 +9,7 @@
     </div>
 </div>
 
-
+<div class="row">
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
@@ -53,4 +53,11 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+
+
+<div class="row">
+    <a href="<?php echo APP_BASE_URL . '?url=news/add'; ?>" class="btn btn-success">Добавть новость</a>
+    <a href="<?php echo APP_BASE_URL . '?url=news/del'; ?>" class="btn btn-danger">Удалить новость</a>
 </div>
