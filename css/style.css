@@ -1,0 +1,16 @@
+#header{
+    height: 50px;
+}
+.menu{
+    width: 250px;
+    margin: 0 auto;
+}
+.content{
+    text-align: justify;
+}
+.btn_edit{
+    text-align: right;
+}
+.content_edit{
+    width: 100%;
+}
