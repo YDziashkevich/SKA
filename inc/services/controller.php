@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Class Controller сервисный класс для подключения отображения
+ */
 class Controller
 {
     protected $view;

@@ -2,6 +2,7 @@
     <div class="row">
         <div class="control-group">
             <label class="control-label" for="textinput">Заголовок:</label>
+
             <div class="controls">
                 <input id="textinput" name="titleNews" type="text" class="content_edit">
             </div>
@@ -12,5 +13,6 @@
         <textarea class="content_edit" name="contentNews" rows="10" wrap="virtual">
         </textarea>
         <input class="btn btn-success" type="submit" name="save_news" value="Сохранить">
+        <a href="<?php echo APP_BASE_URL . '?url=news/index'; ?>" class="btn btn-info">К новостям</a>
     </div>
 </form>

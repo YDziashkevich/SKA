@@ -8,18 +8,19 @@
         </ul>
     </div>
 </div>
-
-<div id="gallery1">
-    <img src="img/01.jpg" alt="" tabindex="0" />
-    <img src="" alt="" tabindex="0" />
-    <img src="" alt="" tabindex="0" />
-    <img src="" alt="" tabindex="0" />
-    <img src="" alt="" tabindex="0" />
-    <img src="" alt="" tabindex="0" />
-    <img src="" alt="" tabindex="0" />
-    <img src="" alt="" tabindex="0" />
-    <div></div>
+<div class="row">
+    <div id="gallery1">
+        <?php
+        foreach (GalleryModel::getImages() as $value) {
+            echo "<img src='$value[src]' alt='' tabindex='0'/>";
+        }
+        ?>
+        <div></div>
+    </div>
 </div>
-
-<div class="test">qweqweqw</div>
-<?php var_dump(APP_BASE_PATH)?>
+<div class="row">
+    <form method='post' enctype=multipart/form-data action=index.php?url=gallery/index>
+        <input name='userImage' class="btn" type='file'>
+        <input class="btn btn-success" type='submit' name="addImage" value='Добавить'>
+    </form>
+</div>

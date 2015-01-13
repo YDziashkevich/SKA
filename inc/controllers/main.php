@@ -1,10 +1,21 @@
 <?php
+
+/**
+ * Class MainController контроллер главной страницы
+ */
 class MainController extends Controller
 {
+    /**
+     * отображение главной страницы
+     */
     public function indexAction()
     {
         $this->view->render('main');
     }
+
+    /**
+     *отображение страницы для редактиравния главной страницы
+     */
     public function editAction()
     {
         if(isset($_POST['save_content'])){

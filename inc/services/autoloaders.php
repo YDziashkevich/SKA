@@ -1,4 +1,5 @@
 <?php
+// функции для загрузки классов
 spl_autoload_register(function($class){
     $pathToFile = 'inc/services/' . strtolower($class) . '.php';
     if(file_exists($pathToFile)){

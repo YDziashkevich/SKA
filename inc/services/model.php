@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Model сервисный класс для подключения к БД
+ */
 class Model
 {
     public static $dbc;
