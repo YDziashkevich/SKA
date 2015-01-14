@@ -6,9 +6,9 @@
 class GalleryController extends Controller
 {
     /**
-     * отображение главной страницы
+     * @param string $page номер страницы галереи
      */
-    public function indexAction()
+    public function indexAction($page = '')
     {
         if(isset($_POST['addImage'])){
             $upDir = './img/';
@@ -19,6 +19,6 @@ class GalleryController extends Controller
             GalleryModel::addImage($image);
             $this->redirect(APP_BASE_URL . '?url=gallery/index');
         }
-        $this->view->render('gallery');
+        $this->view->render('gallery/gallery', array('page' => $page));
     }
 }

@@ -44,11 +44,17 @@ class GalleryModel extends Model
     }
 
     /**
-     * @return array список всех изображений в БД
+     * @param $page номер страницы галереи
+     * @return array вывод изображений в зависимости от страницы
      */
-    public static function getImages()
+    public static function getImages($page)
     {
-        $images = self::getDbc()->query('SELECT src FROM ' . APP_DB_PREFIX . 'gallery');
+        $startImg = ((int)$page - 1) * 8 ;
+        $finishImg = $startImg + 8;
+        $images = self::getDbc()->prepare('SELECT src FROM ' . APP_DB_PREFIX . 'gallery LIMIT :startImg, :finishImg');
+        $images->bindValue(':startImg', $startImg, PDO::PARAM_INT);
+        $images->bindValue(':finishImg', $finishImg, PDO::PARAM_INT);
+        $images->execute();
         return $images->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -61,5 +67,11 @@ class GalleryModel extends Model
         $image = self::getDbc()->prepare('SELECT src FROM st_gallery WHERE src=:src');
         $image->execute(array('src' => $src));
         return $image->fetchColumn();
+    }
+
+    public static function countImages()
+    {
+        $count = self::getDbc()->query('SELECT COUNT(id) FROM ' . APP_DB_PREFIX . 'gallery');
+        return $count->fetchColumn();
     }
 }

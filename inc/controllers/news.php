@@ -10,7 +10,7 @@ class NewsController extends Controller
      */
     public function indexAction()
     {
-        $this->view->render('news');
+        $this->view->render('news/news');
     }
 
     /**
@@ -22,7 +22,7 @@ class NewsController extends Controller
             NewsModel::addNews($_POST['titleNews'], $_POST['contentNews']);
             $this->redirect(APP_BASE_URL . '?url=news/index');
         }
-        $this->view->render('add_news');
+        $this->view->render('news/add_news');
     }
 
     /**
@@ -34,14 +34,14 @@ class NewsController extends Controller
             NewsModel::delNews($_POST['checkDel']);
             $this->redirect(APP_BASE_URL . '?url=news/del');
         }
-        $this->view->render('del_news');
+        $this->view->render('news/del_news');
     }
     /**
      * @param $news id запрашиваемой новости
      */
     public function readAction($news)
     {
-        $this->view->render('read_news', array('news' => $news));
+        $this->view->render('news/read_news', array('news' => $news));
     }
 
     /**

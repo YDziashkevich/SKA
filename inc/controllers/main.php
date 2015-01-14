@@ -10,7 +10,7 @@ class MainController extends Controller
      */
     public function indexAction()
     {
-        $this->view->render('main');
+        $this->view->render('main/main');
     }
 
     /**
@@ -22,6 +22,6 @@ class MainController extends Controller
             MainModel::updateContent($_POST['content_edit']);
             $this->redirect(APP_BASE_URL);
         }
-        $this->view->render('edit_main');
+        $this->view->render('main/edit_main');
     }
 }
