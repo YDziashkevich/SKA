@@ -1,0 +1,7 @@
+@charset "utf-8";
+/* CSS Document */
+.news_review{
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: rgba(143, 143, 143, 0.48) 1px solid;
+}
